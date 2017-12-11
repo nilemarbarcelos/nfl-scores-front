@@ -1,17 +1,35 @@
 import React, { Component } from 'react';
-import { Card, CardHeader, CardMedia, CardTitle, CardText, CardActions, FlatButton } from 'material-ui';
+import { Paper, CardTitle, Divider } from 'material-ui';
 import Team from './Team';
 
 export default class Game extends Component {
+
     render() {
+        const style = {
+            height: 320,
+            width: 250,
+            margin: 20,
+            paddingLeft: 20,
+            paddingRight: 20,
+            textAlign: 'center',
+            display: 'inline-block',
+          };
+
+          const teamStyle = {
+              textAlign: 'left'
+          }
+
         return (
-            <div>
-                <Card>
-                    <CardTitle title={this.props.game.date} subtitle={this.props.game.network} />
+            <Paper style={style} zDepth={3}>
+                <CardTitle title={this.props.game.date} subtitle={this.props.game.network} />
+                <Divider />
+                <div style={teamStyle}>
                     <Team team={this.props.game.home} />
                     <Team team={this.props.game.away} />
-                </Card>
-            </div>
+                </div>
+                <Divider />
+                <CardTitle title={this.props.game.time} />
+            </Paper>
         );
     }
 }
