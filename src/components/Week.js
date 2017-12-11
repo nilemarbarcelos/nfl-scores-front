@@ -20,8 +20,12 @@ export default class Week extends Component {
     }
 
     render() {
+        const style = {
+            textAlign: 'center',
+            backgroundColor: '#e7e7e7'
+        };
         return (
-            <div>
+            <div style={style} >
                 {
                     this.state.games.map(game => <Game key={game.home.name} game={game} />)
                 }
