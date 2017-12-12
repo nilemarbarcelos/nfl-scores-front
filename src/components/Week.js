@@ -10,7 +10,7 @@ export default class Week extends Component {
     
     componentDidMount() {
         // const ROOT_URL = 'http://localhost:3001/nfl-scores/2017/1';
-        const ROOT_URL = 'http://scores-nfl.herokuapp.com/nfl-scores/2017/1'; 
+        const ROOT_URL = 'https://scores-nfl.herokuapp.com/nfl-scores/2017/1'; 
         fetch(ROOT_URL)
         .then(response => response.json())
         .then(week => {
